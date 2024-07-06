@@ -10,10 +10,10 @@ COPY ["DistanceServer.csproj", ""]
 RUN dotnet restore "./DistanceServer.csproj"
 COPY . .
 WORKDIR "/src/."
-RUN dotnet build "DistanceServer.csproj" -c Release -o /app/build
+RUN dotnet build "DistanceServer.csproj" -c Debug -o /app/build
 
 FROM build AS publish
-RUN dotnet publish "DistanceServer.csproj" -c Release -o /app/publish
+RUN dotnet publish "DistanceServer.csproj" -c Debug -o /app/publish
 
 FROM base AS final
 WORKDIR /app

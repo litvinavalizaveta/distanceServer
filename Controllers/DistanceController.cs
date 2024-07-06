@@ -4,7 +4,7 @@ using DistanceServer.Services;
 
 namespace DistanceServer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/distance")]
     [ApiController]
     public class DistanceController : Controller
     {
@@ -15,7 +15,7 @@ namespace DistanceServer.Controllers
             this.distanceService = distanceService;
         }
 
-        [HttpGet("between")]
+        [HttpGet]
         public async Task<IActionResult> GetDistanceBetweenAirports(string from, string to)
         {
             var airportFrom = await distanceService.GetAirportInfoAsync(from);
@@ -24,7 +24,8 @@ namespace DistanceServer.Controllers
             if (airportFrom == null || airportTo == null)
                 return NotFound("One or both iata codes are invalid.");
 
-            var distance = distanceService.CalculateDistance(airportFrom.Location, airportTo.Location);
+            const double metersInMile = 1609.34;
+            var distance = distanceService.CalculateDistanceInMeters(airportFrom.Location, airportTo.Location) / metersInMile;
             return Ok(new { DistanceInMiles = distance });
         }
     }

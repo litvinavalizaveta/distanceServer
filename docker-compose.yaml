@@ -1,0 +1,16 @@
+﻿version: '3.8'
+
+services:
+  distance-server:
+    build:
+      context: /
+      dockerfile: Dockerfile
+    ports:
+      - '50422:80'
+    depends_on:
+      - redis
+
+  redis:
+    image: redis
+    ports:
+      - '6379:6379'
