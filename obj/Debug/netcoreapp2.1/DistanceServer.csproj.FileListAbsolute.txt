@@ -1,0 +1,17 @@
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\appsettings.Development.json
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\appsettings.json
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\DistanceServer.deps.json
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\DistanceServer.runtimeconfig.json
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\DistanceServer.runtimeconfig.dev.json
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\DistanceServer.dll
+D:\projects\DistanceServer\bin\Debug\netcoreapp2.1\DistanceServer.pdb
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.csprojAssemblyReference.cache
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.AssemblyInfoInputs.cache
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.AssemblyInfo.cs
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.csproj.CoreCompileInputs.cache
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.RazorAssemblyInfo.cache
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.RazorAssemblyInfo.cs
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.RazorTargetAssemblyInfo.cache
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.dll
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.pdb
+D:\projects\DistanceServer\obj\Debug\netcoreapp2.1\DistanceServer.genruntimeconfig.cache
