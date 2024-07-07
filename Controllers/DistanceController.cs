@@ -8,24 +8,25 @@ namespace DistanceServer.Controllers
     [ApiController]
     public class DistanceController : Controller
     {
-        private readonly IDistanceService distanceService;
-
-        public DistanceController(IDistanceService distanceService)
+        private readonly IDistanceCalculator distanceService;
+        private readonly IAirportService airportService;
+        
+        public DistanceController(IDistanceCalculator distanceService, IAirportService airportService)
         {
             this.distanceService = distanceService;
+            this.airportService = airportService;
         }
 
         [HttpGet]
         public async Task<IActionResult> GetDistanceBetweenAirports(string from, string to)
         {
-            var airportFrom = await distanceService.GetAirportInfoAsync(from);
-            var airportTo = await distanceService.GetAirportInfoAsync(to);
+            var airportFrom = await airportService.GetAirportInfo(from);
+            var airportTo = await airportService.GetAirportInfo(to);
 
             if (airportFrom == null || airportTo == null)
-                return NotFound("One or both iata codes are invalid.");
+                return NotFound(new { Error = "One or both iata codes are invalid." });
 
-            const double metersInMile = 1609.34;
-            var distance = distanceService.CalculateDistanceInMeters(airportFrom.Location, airportTo.Location) / metersInMile;
+            var distance = distanceService.CalculateDistanceInMiles(airportFrom.Location, airportTo.Location);
             return Ok(new { DistanceInMiles = distance });
         }
     }

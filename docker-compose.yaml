@@ -3,7 +3,7 @@
 services:
   distance-server:
     build:
-      context: /
+      context: .
       dockerfile: Dockerfile
     ports:
       - '50422:80'

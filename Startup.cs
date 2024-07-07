@@ -19,8 +19,9 @@ namespace DistanceServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IDistanceCalculator, MilesDistanceCalculator>();
+            services.AddHttpClient<IAirportService, CachedAirportService>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddHttpClient<IDistanceService, DistanceService>();
             services.AddDistributedRedisCache(options =>
             {
                 options.Configuration = Configuration.GetConnectionString("RedisConnection");
